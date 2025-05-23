@@ -1,0 +1,502 @@
+/* Basic Reset to ensure consistent styling across browsers */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: sans-serif; /* A common and readable default font */
+    line-height: 1.6; /* Good default line height for readability */
+    color: #333; /* Dark gray default text color */
+    background-image: linear-gradient(to bottom, #98FB98 50%, #FFB6C1 50%); /* Top half Pale Green, bottom half Light Pink */
+    background-repeat: no-repeat; /* Prevent the gradient from repeating */
+    background-color: #f4f4f4; /* Fallback background color */
+}
+
+a {
+    color: #007bff; /* A common blue for links */
+    text-decoration: none; /* Remove underlines from links by default */
+}
+
+a:hover {
+    text-decoration: underline; /* Add underline on hover for better feedback */
+}
+
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007bff; /* Blue button background */
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+}
+
+.button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+
+/* Header Styling */
+header {
+    background-color: #fff;
+    padding: 1rem 20px;
+    border-bottom: 1px solid #ddd;
+}
+
+nav {
+    display: flex;
+    justify-content: center; /* Center the navigation items */
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    margin: 0 1rem; /* Add spacing between the links */
+}
+
+nav ul li a {
+    color: #555;
+    padding: 0.5rem 1rem;
+    display: block;
+    text-decoration: none;
+}
+
+nav ul li a:hover {
+    color: #007bff;
+}
+
+nav ul li.logo-item .logo {
+    font-size: 1.8rem; /* Make the logo text larger */
+    font-weight: bold;
+    color:#333;
+    /* Add styling for the stroke effect */
+    -webkit-text-stroke: 1px #000; /* For Safari and Chrome */
+    text-stroke: 1px #000 /* Standard property */
+}
+
+/* Adjust spacing for the logo item */
+nav ul li.logo-item {
+    margin: 0 2rem; /* Add more spacing around the logo */
+}
+
+/* Remove left margin from the first item */
+nav ul li:first-child {
+    margin-left: 0;
+}
+
+/* Remove right margin from the last item */
+nav ul li:last-child {
+    margin-right: 0;
+}
+
+.nav-logo {
+    font-weight: bold;
+    font-size: 1.5em; /* Optional: makes the logo larger */
+    letter-spacing: 1px; /* Optional: adds spacing between letters */
+    color: green; /* Dark gray for the logo */
+}
+
+.hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: #333;
+}
+
+.hero p {
+    font-size: 1.1rem;
+    color: #555;
+    margin-bottom: 2rem;
+}
+
+/* Services Section Styling */
+.services {
+    padding: 3rem 20px;
+    text-align: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.services h2 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    color: #333;
+}
+
+.services-grid {
+    display: flex; /* Arrange service cards in a row (initially) */
+    flex-wrap: wrap; /* Allow cards to wrap to the next line on smaller screens */
+    justify-content: center; /* Center the cards horizontally */
+    gap: 20px; /* Space between the cards */
+    margin-top: 2rem;
+}
+
+.service-card {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    width: calc(33.33% - 20px); /* Basic 3-column layout */
+    margin-bottom: 1rem; /* Space between rows of cards */
+}
+
+/* Basic responsiveness for service cards */
+@media (max-width: 992px) {
+    .service-card {
+        width: calc(50% - 20px); /* 2-column layout on medium screens */
+    }
+}
+
+@media (max-width: 768px) {
+    .service-card {
+        width: 100%; /* Single column on small screens */
+    }
+}
+
+/* Testimonials Section Styling */
+.testimonials {
+    background-color: #f9f9f9;
+    padding: 3rem 20px;
+    text-align: center;
+}
+
+.testimonials h2 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    color: #333;
+}
+
+.testimonial-slider {
+    max-width: 800px;
+    margin: 0 auto;
+    /* You'll need more CSS/JS for actual sliding */
+    display: flex; /* Basic layout for testimonials */
+    overflow-x: auto; /* Enable horizontal scrolling if needed */
+    gap: 20px;
+    padding-bottom: 1rem; /* To see all of the last item */
+}
+
+.testimonial-card {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    min-width: 300px; /* Ensure each card has a minimum width */
+}
+
+.testimonial-card p:first-child {
+    font-style: italic;
+    color: #777;
+    margin-bottom: 0.5rem;
+}
+
+.testimonial-card p:last-child {
+    font-weight: bold;
+    color: #555;
+    text-align: right;
+}
+
+/* Contact Section Styling */
+.contact {
+    padding: 3rem 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex; /* Arrange form and info side by side */
+    justify-content: space-around; /* Space them out */
+    align-items: flex-start; /* Align items from the top */
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    gap: 30px;
+}
+
+.contact-form,
+.contact-info {
+    flex: 1 1 300px; /* Grow/shrink, initial size */
+}
+
+.contact-form form {
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-form input,
+.contact-form textarea {
+    padding: 10px;
+    margin-bottom: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.contact-form textarea {
+    resize: vertical;
+    min-height: 150px;
+}
+
+/* Styling for social media icons */
+.contact-info .social-links {
+    margin-top: 1rem; /* Add some space above the icons */
+    text-align: center; /* Center the icons horizontally within the info area */
+}
+
+.contact-info .social-links a {
+    display: inline-block; /* Allows setting margin and padding */
+    margin: 0 0.5rem; /* Add some horizontal spacing between icons */
+    opacity: 0.7; /* Slightly fade the icons initially */
+    transition: opacity 0.3s ease-in-out; /* Smooth transition for hover effect */
+}
+
+.contact-info .social-links a:hover {
+    opacity: 1; /* Fully show the icon on hover */
+}
+
+.contact-info .social-links img {
+    width: 30px; /* Adjust the width as needed */
+    height: 30px; /* Adjust the height as needed */
+    vertical-align: middle; /* Align the icon vertically with any surrounding text */
+    border-radius: 5px; /* Optional: Add rounded corners to the icons */
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); /* Optional: Add a subtle shadow */
+}
+
+/* Styling for the map size */
+.contact-info .map-container {
+    margin-top: 1rem; /* Keep some space above the map */
+    max-width: 100%; /* Make the map responsive within its container */
+    overflow: hidden; /* Prevent potential scrollbars */
+}
+
+.contact-info .map-container iframe {
+    width: 100%; /* Make the iframe take up the full width of its container */
+    height: 300px; /* Set a specific height for the map - adjust as needed */
+    border: 0; /* Remove the default iframe border */
+}
+
+footer {
+    background: #222;
+    color: #fff;
+    padding: 1.5rem 0;
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.footer-nav a {
+    color: #90ee90;
+    margin: 0 0.5rem;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.footer-nav a:hover {
+    text-decoration: underline;
+}
+
+.background-image-section {
+    background-image: url("./assets/10.jpg"); /* Replace with your image path */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 350px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.background-image-section::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0,0,0,0.4); /* Optional: dark overlay for readability */
+    z-index: 1;
+}
+
+.background-content {
+    position: relative;
+    z-index: 2;
+    color: #fff;
+    text-align: center;
+}
+
+.travel-section {
+    width: 100%;
+    max-width: 1200px;
+    text-align: center;
+    padding: 40px;
+    background-color: #ffffff; /* Clean white background for the section */
+    border-radius: 15px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1); /* More pronounced shadow */
+}
+.section-title {
+    font-size: 2.8em; /* Slightly larger title */
+    color: #2c3e50; /* Darker, more sophisticated color */
+    margin-bottom: 15px;
+}
+.section-subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d; /* Muted subtitle color */
+    margin-bottom: 50px; /* More space below subtitle */
+}
+.travel-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+}
+.card {
+    background-color: #ecf0f1; /* Light grey for cards */
+    border-radius: 12px;
+    padding: 30px;
+    width: calc(33% - 40px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08); /* Softer shadow for cards */
+    text-align: left;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    min-width: 280px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Distribute content and button */
+}
+.card:hover {
+    transform: translateY(-8px); /* More noticeable lift on hover */
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+}
+.card-title {
+    font-size: 1.6em; /* Slightly larger card title */
+    color: #34495e; /* Dark blue for card titles */
+    margin-bottom: 10px;
+}
+.card-description {
+    font-size: 1.05em;
+    color: #5a6a7a; /* Slightly darker text for description */
+    line-height: 1.6;
+    flex-grow: 1; /* Allows description to take up available space */
+    margin-bottom: 20px; /* Space before button */
+}
+.learn-more {
+    display: inline-block;
+    padding: 12px 25px; /* Larger padding for buttons */
+    background-color: #3498db; /* Vibrant blue for buttons */
+    color: white;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    letter-spacing: 0.5px; /* Slightly spaced out letters */
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    align-self: flex-start; /* Aligns button to the left within the card */
+}
+.learn-more:hover {
+    background-color: #2980b9; /* Darker blue on hover */
+    transform: translateY(-2px); /* Slight lift on button hover */
+}
+
+/* Community Section Styles */
+.community-section {
+    width: 100%;
+    max-width: 1200px;
+    text-align: center;
+    padding: 60px 40px; /* More vertical padding */
+    background-color: #e0f7fa; /* A light, inviting blue for the community section */
+    border-radius: 15px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+    margin-top: 50px; /* Space from the previous section */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative; /* For absolute positioning of graphic if needed */
+    overflow: hidden; /* To contain the graphic within the rounded corners */
+}
+
+.community-section .section-title {
+    color: #00796b; /* A calm green-blue */
+    margin-bottom: 10px;
+}
+
+.community-section .section-subtitle {
+    color: #4db6ac; /* Lighter shade of the title color */
+    margin-bottom: 40px; /* Space before the button */
+    max-width: 700px; /* Limit width for readability */
+}
+
+.join-community-button {
+    display: inline-block;
+    padding: 15px 35px;
+    background-color: #ff9800; /* A warm orange for the call to action */
+    color: white;
+    border-radius: 30px; /* Pill-shaped button */
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1em;
+    letter-spacing: 0.7px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); /* Soft shadow for button */
+    z-index: 1; /* Ensure button is above graphic if they overlap */
+}
+
+.join-community-button:hover {
+    background-color: #fb8c00; /* Darker orange on hover */
+    transform: translateY(-3px);
+}
+
+.community-image-container {
+    margin-top: 40px; /* Space between button and image */
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    /* You might adjust positioning here to match the exact visual from the image if it's a specific graphic */
+}
+
+.community-graphic {
+    max-width: 100%; /* Ensure image scales down on smaller screens */
+    height: auto;
+    border-radius: 10px; /* Slightly rounded corners for the image */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Shadow for the image */
+}
+
+@media (max-width: 992px) {
+    .card {
+        width: calc(50% - 30px);
+    }
+}
+
+@media (max-width: 768px) {
+    .card {
+        width: 100%;
+    }
+    .travel-section {
+        padding: 20px;
+    }
+    .section-title {
+        font-size: 2.2em;
+    }
+    .section-subtitle {
+        font-size: 1.1em;
+    }
+    .community-section {
+        padding: 40px 20px;
+    }
+    .community-section .section-title {
+        font-size: 2em;
+    }
+    .community-section .section-subtitle {
+        font-size: 1em;
+    }
+    .join-community-button {
+        padding: 12px 25px;
+        font-size: 1em;
+    }
+}
